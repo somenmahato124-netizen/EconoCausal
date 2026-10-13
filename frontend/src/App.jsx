@@ -54,7 +54,7 @@ export default function App() {
       setLoading(true);
       setError(null);
       const res = await fetch(
-        `http://127.0.0.1:8000/api/dashboard-data?budget=${budget}&cost_per_discount=${costPerDiscount}`
+       `https://econocausal-backend.onrender.com/api/dashboard-data?budget=${budget}&cost_per_discount=${costPerDiscount}`
       );
       if (!res.ok) {
         throw new Error(`Server returned status: ${res.status}`);
@@ -72,16 +72,16 @@ export default function App() {
     e.preventDefault();
     try {
       setInferring(true);
-      const res = await fetch('http://127.0.0.1:8000/api/recommend-discount', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          age: parseInt(formData.age, 10),
-          session_duration: parseFloat(formData.session_duration),
-          pages_viewed: parseInt(formData.pages_viewed, 10),
-          customer_rating: parseFloat(formData.customer_rating),
-          product_price: parseFloat(formData.product_price),
-        }),
+     const res = await fetch('https://econocausal-backend.onrender.com/api/recommend-discount', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+      age: parseInt(formData.age, 10),
+      session_duration: parseFloat(formData.session_duration),
+      pages_viewed: parseInt(formData.pages_viewed, 10),
+      customer_rating: parseFloat(formData.customer_rating),
+      product_price: parseFloat(formData.product_price),
+      }),
       });
       if (!res.ok) {
         throw new Error(`Inference call failed with status: ${res.status}`);
