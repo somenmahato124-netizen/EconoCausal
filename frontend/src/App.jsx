@@ -1,8 +1,4 @@
-// ==============================================================================
-// File: frontend/src/App.jsx
-// Description: Interactive Causal ML Dashboard & Multi-Tier ($0, $10, $20, $30) 
-//              Discount Optimization Sandbox
-// ==============================================================================
+
 
 import React, { useState, useEffect } from 'react';
 import {
@@ -27,14 +23,14 @@ import {
 } from 'lucide-react';
 
 export default function App() {
-  // Budget simulation state
+  
   const [budget, setBudget] = useState(5000);
   const [costPerDiscount, setCostPerDiscount] = useState(10);
   const [dashboardData, setDashboardData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Customer inference input form state
+  
   const [formData, setFormData] = useState({
     age: 35,
     session_duration: 120,

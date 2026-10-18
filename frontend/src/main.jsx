@@ -1,7 +1,4 @@
-// ==============================================================================
-// File: frontend/src/main.jsx
-// Description: Root entry point mounting the EconoCausal React Application
-// ==============================================================================
+
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
